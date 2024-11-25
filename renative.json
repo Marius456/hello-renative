@@ -1,0 +1,29 @@
+{
+    "$schema": ".rnv/schema/rnv.project.json",
+    "extendsTemplate": "@rnv/template-starter/renative.json",
+    "projectName": "hello-renative",
+    "workspaceID": "rnv",
+    "templateConfig": {
+        "name": "@rnv/template-starter",
+        "version": "1.7.0-rc.0"
+    },
+    "defaults": {
+        "supportedPlatforms": [
+            "web",
+            "ios",
+            "android",
+            "androidtv",
+            "firetv",
+            "tvos",
+            "macos",
+            "linux",
+            "windows",
+            "tizen",
+            "webos",
+            "chromecast",
+            "kaios",
+            "androidwear",
+            "tizenwatch"
+        ]
+    }
+}
