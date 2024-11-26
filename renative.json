@@ -1,29 +1,34 @@
 {
-    "$schema": ".rnv/schema/rnv.project.json",
-    "extendsTemplate": "@rnv/template-starter/renative.json",
-    "projectName": "hello-renative",
-    "workspaceID": "rnv",
-    "templateConfig": {
-        "name": "@rnv/template-starter",
-        "version": "1.7.0-rc.0"
-    },
-    "defaults": {
-        "supportedPlatforms": [
-            "web",
-            "ios",
-            "android",
-            "androidtv",
-            "firetv",
-            "tvos",
-            "macos",
-            "linux",
-            "windows",
-            "tizen",
-            "webos",
-            "chromecast",
-            "kaios",
-            "androidwear",
-            "tizenwatch"
-        ]
-    }
+  "$schema": ".rnv/schema/rnv.project.json",
+  "extendsTemplate": "@rnv/template-starter/renative.json",
+  "projectName": "hello-renative",
+  "workspaceID": "rnv",
+  "templateConfig": {
+    "name": "@rnv/template-starter",
+    "version": "1.7.0-rc.0"
+  },
+  "defaults": {
+    "supportedPlatforms": [
+      "web",
+      "ios",
+      "android",
+      "androidtv",
+      "firetv",
+      "tvos",
+      "macos",
+      "linux",
+      "windows",
+      "tizen",
+      "webos",
+      "chromecast",
+      "kaios",
+      "androidwear",
+      "tizenwatch"
+    ]
+  },
+  "plugins": {
+    "react-native-paper": "5.12.5",
+    "react-native-vector-icons": "^10.2.0",
+    "react-native-safe-area-context": "4.14.0"
+  }
 }
