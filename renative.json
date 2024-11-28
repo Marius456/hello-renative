@@ -27,13 +27,7 @@
     ]
   },
   "plugins": {
-      "react-native-paper": {
-          "version": "5.12.5",
-          "webpackConfig": {
-              "modulePaths": true,
-              "moduleAliases": true
-          }
-      },
+      "react-native-paper": "source:rnv",
       "react-native-vector-icons": "source:rnv",
       "react-native-safe-area-context": "source:rnv"
   }
