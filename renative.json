@@ -27,8 +27,16 @@
     ]
   },
   "plugins": {
-      "react-native-paper": "source:rnv",
-      "react-native-vector-icons": "source:rnv",
-      "react-native-safe-area-context": "source:rnv"
+    "react-redux": {
+      "version": "7.2.8",
+      "webpackConfig": {
+          "moduleAliases": true,
+          "modulePaths": true
+      }
+    },
+    "@reduxjs/toolkit": "source:rnv",
+    "react-native-vector-icons": "source:rnv",
+    "react-native-safe-area-context": "source:rnv",
+    "@react-native-async-storage/async-storage": "source:rnv"
   }
 }
