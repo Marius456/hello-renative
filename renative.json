@@ -30,13 +30,21 @@
     "react-redux": {
       "version": "7.2.8",
       "webpackConfig": {
-          "moduleAliases": true,
-          "modulePaths": true
+        "moduleAliases": true,
+        "modulePaths": true
       }
     },
     "@reduxjs/toolkit": "source:rnv",
+    "@react-native-async-storage/async-storage": "source:rnv",
+
+    "react-native-paper": {
+      "version": "5.12.5",
+      "webpackConfig": {
+        "modulePaths": true,
+        "moduleAliases": true
+      }
+    },
     "react-native-vector-icons": "source:rnv",
-    "react-native-safe-area-context": "source:rnv",
-    "@react-native-async-storage/async-storage": "source:rnv"
+    "react-native-safe-area-context": "source:rnv"
   }
 }
