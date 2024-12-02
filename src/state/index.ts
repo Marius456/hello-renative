@@ -1,34 +1,22 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { setupListeners } from "@reduxjs/toolkit/query";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { combineReducers } from "redux";
-import reducers from "./reducers";
-import { persistReducer, persistStore } from "redux-persist";
-import storage from "@react-native-async-storage/async-storage";
+import { createStore } from 'redux';
 
-const persistConfig = {
-  key: "root",
-  storage: storage,
-  blacklist: ["api"],
+// Define a simple reducer
+const initialState = {
+  count: 0
 };
 
-const rootReducer = combineReducers({
-  ...reducers,
-});
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    case 'DECREMENT':
+      return { ...state, count: state.count - 1 };
+    default:
+      return state;
+  }
+};
 
-export const store = configureStore({
-  reducer: persistReducer(persistConfig, rootReducer)
-});
+// Create the store
+const store = createStore(reducer);
 
-export const persistor = persistStore(store);
-
-setupListeners(store.dispatch);
-
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof rootReducer>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
-
-export const useAppDispatch: () => AppDispatch = useDispatch;
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-export * from "./reducers";
+export default store;
