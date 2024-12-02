@@ -8,9 +8,11 @@ import { View } from 'react-native';
 const App = () => {
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
         <View style={{ backgroundColor: "red", height: "500px", width: "500px" }}>
           <Counter />
         </View>
+      </PersistGate>
     </Provider>
   );
 };

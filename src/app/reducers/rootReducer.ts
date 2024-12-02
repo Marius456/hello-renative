@@ -1,4 +1,3 @@
-// rootReducer.js
 import { combineReducers } from 'redux';
 import userReducer from './userReducer';
 import counterReducer from './counterReducer';
