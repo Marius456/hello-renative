@@ -2,8 +2,8 @@ import React from "react";
 import { Text, View } from "react-native";
 import { ThemeProvider } from "../config";
 import { Provider } from "react-redux";
-import store from "../state";
 import { useSelector, useDispatch } from 'react-redux';
+import store from "./store";
 
 const App = () => {
   return (
