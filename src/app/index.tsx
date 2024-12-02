@@ -1,21 +1,31 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { ThemeProvider } from "../config";
-import { Provider as ReduxProvider } from "react-redux";
-import { store } from "../state";
+import { Provider } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
+import store from "./store";
 
-import { Provider as PaperProvider } from "react-native-paper";
-
-const App = () => (
-  <ThemeProvider>
-    {/* <PaperProvider> */}
-    <ReduxProvider store={store}>
+const App = () => {
+  return (
+    <Provider store={store}>
       <View style={{ backgroundColor: "red", height: "500px", width: "500px" }}>
-        <Text>TEST</Text>
+        <Counter />
       </View>
-    </ReduxProvider>
-    {/* </PaperProvider> */}
-  </ThemeProvider>
-);
+    </Provider>
+  );
+};
+
+const Counter = () => {
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+    </div>
+  );
+};
 
 export default App;

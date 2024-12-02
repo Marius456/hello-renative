@@ -36,6 +36,13 @@
     },
     "@reduxjs/toolkit": "source:rnv",
     "@react-native-async-storage/async-storage": "source:rnv",
+    "redux": {
+      "version": "^5.0.1",
+      "webpackConfig": {
+        "moduleAliases": true,
+        "modulePaths": true
+      }
+    },
 
     "react-native-paper": {
       "version": "5.12.5",
