@@ -1,22 +1,20 @@
-import { createStore } from 'redux';
 
-// Define a simple reducer
-const initialState = {
-  count: 0
+import { configureStore } from '@reduxjs/toolkit';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { persistStore, persistReducer } from 'redux-persist';
+import rootReducer from './reducers/rootReducer';
+
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return { ...state, count: state.count + 1 };
-    case 'DECREMENT':
-      return { ...state, count: state.count - 1 };
-    default:
-      return state;
-  }
-};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Create the store
-const store = createStore(reducer);
+const store = configureStore({
+  reducer: persistedReducer,
+});
 
-export default store;
+const persistor = persistStore(store);
+
+export { store, persistor };
